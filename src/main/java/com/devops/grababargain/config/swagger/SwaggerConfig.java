@@ -24,6 +24,9 @@ public class SwaggerConfig {
                                 .url("http://localhost:8080")
                                 .description("Ambiente de desenvolvimento"),
                         new Server()
+                                .url("http://localhost:8081")
+                                .description("Ambiente de desenvolvimento"),
+                        new Server()
                                 .url("A configurar")
                                 .description("Ambiente de testes")));
     }

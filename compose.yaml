@@ -6,24 +6,23 @@ services:
     container_name: grababargain-api
     depends_on:
       - postgres
-    profiles:
-      - prod
+    profiles: ["prod"]
     ports:
-      - "8081:8080"
+      - "8080:8080"
     environment:
       SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/DBforDevops
-      SPRING_DATASOURCE_USERNAME: grababargain
-      SPRING_DATASOURCE_PASSWORD: engsoftware@2024
-      SPRING_PROFILES_ACTIVE: prod
+      SPRING_DATASOURCE_USERNAME: ${POSTGRES_USER}
+      SPRING_DATASOURCE_PASSWORD: ${POSTGRES_PASSWORD}
 
   postgres:
     image: postgres:16
     container_name: grababargain-database
+    profiles: ["dev", "prod"]
     restart: always
     environment:
-      POSTGRES_DB: DBforDevops
-      POSTGRES_USER: grababargain
-      POSTGRES_PASSWORD: engsoftware@2024
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
       TZ: America/Araguaina
     volumes:
       - db:/var/lib/postgresql/data

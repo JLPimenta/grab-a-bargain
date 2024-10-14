@@ -24,7 +24,6 @@
             <properties>
                 <activatedProperties>dev</activatedProperties>
             </properties>
-
             <activation>
                 <activeByDefault>true</activeByDefault>
             </activation>
@@ -33,7 +32,7 @@
         <profile>
             <id>prod</id>
             <properties>
-                <activatedProperties>test</activatedProperties>
+                <activatedProperties>prod</activatedProperties>
             </properties>
         </profile>
     </profiles>
