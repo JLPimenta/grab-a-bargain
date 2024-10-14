@@ -5,8 +5,6 @@ import com.devops.grababargain.model.Product;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
-import java.util.Optional;
-
 public interface IProductService {
     Product create(Product data);
 

@@ -1,6 +1,5 @@
 package com.devops.grababargain.repository;
 
-import com.devops.grababargain.model.Customer;
 import com.devops.grababargain.model.Order;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
