@@ -50,7 +50,7 @@ public class ProductService implements IProductService {
 
     @Override
     public void delete(Long id) {
-
+        getRepository().deleteById(id);
     }
 
     private void bind(Product entity, Product update) {
