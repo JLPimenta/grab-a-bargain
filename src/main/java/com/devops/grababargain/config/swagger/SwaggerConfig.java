@@ -11,6 +11,8 @@ import java.util.List;
 @Configuration
 public class SwaggerConfig {
 
+    private final String address = System.getenv("ENV_IP");
+
     @Bean
     public OpenAPI openApi() {
         return new OpenAPI()
@@ -27,7 +29,7 @@ public class SwaggerConfig {
                                 .url("http://localhost:8081")
                                 .description("Ambiente de desenvolvimento"),
                         new Server()
-                                .url("A configurar")
+                                .url("http://" + address + ":8080")
                                 .description("Ambiente de testes")));
     }
 }
